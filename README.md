@@ -9,4 +9,4 @@ Statische Bewerbungsseite (Bewerberfunnel Physiotherapeut/in) für VIREO, das Ge
 - Reporting: Google Sheet „VIREO Bewerbungen"
 - Meta-Pixel: `CONFIG.META_PIXEL_ID` in `app.js` eintragen, Consent-Streifen erscheint dann automatisch
 
-Deploy: Coolify (Static) auf dem Hetzner-Server, Domain vireo.outvance.co, später bewerbung.vireo-gesundheit.de.
+Deploy: Coolify (Static) auf dem Hetzner-Server. Echte Domain bewerbung.vireo-gesundheit.de (A-Record auf 159.69.82.164), vireo.outvance.co nur als Demo-Adresse.
