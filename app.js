@@ -6,6 +6,7 @@
     ENDPOINT: 'https://script.google.com/macros/s/AKfycbyrQPWwRM6cvABHQGAZtKaaZpDd3LQ4YpdoySQ6_iCczE-s4fDKnjVO-NFGwmfEXw34Jw/exec',
     META_PIXEL_ID: '',           // Pixel-ID des TZO-Werbekontos eintragen, sonst bleibt der Consent-Streifen aus
     MAX_FILE_BYTES: 8 * 1024 * 1024,
+    VARIANTE: 'landingpage',
     TEST_MODE: /[?&]test=1/.test(location.search)
   };
 
@@ -189,6 +190,7 @@
       datenschutz: form.elements.datenschutz.checked,
       website: form.elements.website.value,
       lebenslauf: fileData,
+      variante: CONFIG.VARIANTE,
       test: CONFIG.TEST_MODE,
       page: location.href
     };

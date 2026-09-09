@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bewerbung als Physiotherapeut/in · VIREO</title>
+<meta name="description" content="Bewirb dich in zwei Minuten als Physiotherapeut/in (m/w/d) bei VIREO in Berlin-Mahlsdorf. Acht kurze Schritte, kein Anschreiben.">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#F1F0EC">
+<meta property="og:title" content="Komm ins VIREO Team · Physiotherapeut/in (m/w/d)">
+<meta property="og:description" content="In zwei Minuten bewerben. Acht kurze Schritte, kein Anschreiben.">
+<meta property="og:image" content="assets/og.jpg">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="funnel.css">
+</head>
+<body>
+
+<div class="funnel" id="funnel">
+
+  <div class="bar" id="bar" hidden>
+    <button class="bar__back" id="back" type="button" aria-label="Einen Schritt zurück">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="bar__steps" id="steps" role="progressbar" aria-label="Fortschritt" aria-valuemin="1" aria-valuemax="8" aria-valuenow="1"></div>
+  </div>
+
+  <div class="stage" id="stage" data-dir="forward">
+
+    <!-- Einstieg -->
+    <section class="screen is-active" data-screen="intro">
+      <div class="screen__inner">
+        <div class="f-intro__logo"><img src="assets/logo-quer.png" alt="VIREO, das Gesundheitszentrum" width="454" height="120"></div>
+        <div class="f-photo"><img src="assets/training.webp" alt="Zwei Physiotherapeut:innen trainieren gemeinsam mit einem Medizinball." width="443" height="456" fetchpriority="high"></div>
+        <p class="f-eyebrow" style="text-align:center">Physiotherapeut/in (m/w/d) · Berlin-Mahlsdorf</p>
+        <h1 class="f-title" style="text-align:center">Komm ins<br>VIREO&nbsp;Team</h1>
+        <p class="f-text" style="text-align:center">Finde in zwei Minuten heraus, ob wir zusammenpassen. Ohne Anschreiben, Lebenslauf optional.</p>
+        <button class="f-btn" type="button" data-go="1">Los geht's</button>
+        <p class="f-micro">8 kurze Schritte · ca. 2 Minuten</p>
+        <p class="f-legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></p>
+      </div>
+    </section>
+
+    <!-- 1 Umfang -->
+    <section class="screen" data-screen="1" data-step="1" data-tone="sand">
+      <div class="screen__inner">
+        <p class="f-eyebrow">Schritt 1 von 8</p>
+        <h2 class="f-title">Wie möchtest du arbeiten?</h2>
+        <div class="opts" data-field="umfang">
+          <button class="opt" type="button" data-value="geringfuegig">Geringfügig</button>
+          <button class="opt" type="button" data-value="teilzeit">Teilzeit</button>
+          <button class="opt" type="button" data-value="vollzeit">Vollzeit</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 Start -->
+    <section class="screen" data-screen="2" data-step="2" data-tone="sand">
+      <div class="screen__inner">
+        <p class="f-eyebrow">Schritt 2 von 8</p>
+        <h2 class="f-title">Wann könntest du starten?</h2>
+        <div class="opts" data-field="start">
+          <button class="opt" type="button" data-value="sofort">Ab sofort</button>
+          <button class="opt" type="button" data-value="bald">In 1 bis 3 Monaten</button>
+          <button class="opt" type="button" data-value="spaeter">Später</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Zwischenkarte Räume -->
+    <section class="screen" data-screen="3" data-step="3" data-tone="forest">
+      <div class="screen__inner">
+        <div class="f-photo f-photo--sm"><img src="assets/raum.webp" alt="Heller Behandlungsraum mit salbeigrüner Liege und Holzlattenwand." width="443" height="456" loading="lazy"></div>
+        <p class="f-eyebrow">Ab 1. November 2026</p>
+        <h2 class="f-title">Neue Räume,<br>mehr Platz für dich</h2>
+        <p class="f-text">Wir ziehen in den Hultschiner Damm 353 bis 355. Größer, moderner, mit mehr Behandlungsräumen und Platz für neue Kolleg:innen. Du gestaltest den Neustart von Anfang an mit.</p>
+        <button class="f-btn" type="button" data-go="4">Weiter</button>
+      </div>
+    </section>
+
+    <!-- 4 Ausbildung -->
+    <section class="screen" data-screen="4" data-step="4" data-tone="sand">
+      <div class="screen__inner">
+        <p class="f-eyebrow">Schritt 4 von 8</p>
+        <h2 class="f-title">Hast du die Ausbildung abgeschlossen?</h2>
+        <div class="opts" data-field="ausbildung">
+          <button class="opt" type="button" data-value="ja">Ja, abgeschlossen</button>
+          <button class="opt" type="button" data-value="letztes_jahr">Im letzten Ausbildungsjahr</button>
+          <button class="opt" type="button" data-value="nein">Noch nicht</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 Erfahrung -->
+    <section class="screen" data-screen="5" data-step="5" data-tone="sand">
+      <div class="screen__inner">
+        <p class="f-eyebrow">Schritt 5 von 8</p>
+        <h2 class="f-title">Wie viel Erfahrung bringst du mit?</h2>
+        <div class="opts" data-field="erfahrung">
+          <button class="opt" type="button" data-value="einstieg">Berufseinstieg</button>
+          <button class="opt" type="button" data-value="bis3">Bis 3 Jahre</button>
+          <button class="opt" type="button" data-value="ueber3">Über 3 Jahre</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 Zusatzqualifikationen -->
+    <section class="screen" data-screen="6" data-step="6" data-tone="sand">
+      <div class="screen__inner">
+        <p class="f-eyebrow">Schritt 6 von 8</p>
+        <h2 class="f-title">Welche Zusatz&shy;qualifikationen hast du?</h2>
+        <p class="f-hint">Mehrfachauswahl, gern auch keine.</p>
+        <div class="chips" id="zusatz">
+          <button class="chip" type="button" data-value="Manuelle Therapie">Manuelle Therapie</button>
+          <button class="chip" type="button" data-value="Manuelle Lymphdrainage">Lymphdrainage</button>
+          <button class="chip" type="button" data-value="KGG">KGG</button>
+          <button class="chip" type="button" data-value="Bobath">Bobath</button>
+          <button class="chip" type="button" data-value="CMD">CMD</button>
+        </div>
+        <button class="f-btn" type="button" data-go="7">Weiter</button>
+        <button class="f-skip" type="button" data-skip="7">Keine davon</button>
+      </div>
+    </section>
+
+    <!-- 7 Zwischenkarte Benefits -->
+    <section class="screen" data-screen="7" data-step="7" data-tone="forest">
+      <div class="screen__inner">
+        <div class="f-photo"><img src="assets/team.webp" alt="Das Team des Therapiezentrums Orbanke." width="800" height="456" loading="lazy"></div>
+        <p class="f-eyebrow">Das erwartet dich</p>
+        <h2 class="f-title">Wir investieren in deine Entwicklung</h2>
+        <ul class="bullets" style="list-style:none;margin:0;padding:0;display:grid;gap:12px">
+          <li style="display:grid;grid-template-columns:auto 1fr;gap:12px;font-size:var(--fs-body-s);color:var(--text-on-inverse-muted)"><span aria-hidden="true" style="color:var(--green-200)">∞</span><span>Fortbildungskosten übernehmen wir</span></li>
+          <li style="display:grid;grid-template-columns:auto 1fr;gap:12px;font-size:var(--fs-body-s);color:var(--text-on-inverse-muted)"><span aria-hidden="true" style="color:var(--green-200)">∞</span><span>Hochmoderne Praxisausstattung</span></li>
+          <li style="display:grid;grid-template-columns:auto 1fr;gap:12px;font-size:var(--fs-body-s);color:var(--text-on-inverse-muted)"><span aria-hidden="true" style="color:var(--green-200)">∞</span><span>Tankkarte, BVG-Ticket oder JobBike, du wählst</span></li>
+          <li style="display:grid;grid-template-columns:auto 1fr;gap:12px;font-size:var(--fs-body-s);color:var(--text-on-inverse-muted)"><span aria-hidden="true" style="color:var(--green-200)">∞</span><span>Betriebliche Altersvorsorge</span></li>
+        </ul>
+        <button class="f-btn" type="button" data-go="8">Fast geschafft</button>
+      </div>
+    </section>
+
+    <!-- 8 Kontakt -->
+    <section class="screen f-screen--form" data-screen="8" data-step="8" data-tone="sand">
+      <div class="screen__inner">
+        <p class="f-eyebrow">Schritt 8 von 8</p>
+        <h2 class="f-title">Wie erreichen wir dich?</h2>
+        <form id="ffm" novalidate>
+          <div class="f-fields">
+            <div class="f-row">
+              <div class="f-field" data-field="vorname"><label for="fv">Vorname</label><input id="fv" name="vorname" type="text" autocomplete="given-name" placeholder="Dein Vorname"><span class="f-err">Bitte ausfüllen.</span></div>
+              <div class="f-field" data-field="nachname"><label for="fn">Nachname</label><input id="fn" name="nachname" type="text" autocomplete="family-name" placeholder="Dein Nachname"><span class="f-err">Bitte ausfüllen.</span></div>
+            </div>
+            <div class="f-row">
+              <div class="f-field" data-field="telefon"><label for="ft">Telefon</label><input id="ft" name="telefon" type="tel" inputmode="tel" autocomplete="tel" placeholder="0170 1234567"><span class="f-err">Bitte ausfüllen.</span></div>
+              <div class="f-field" data-field="email"><label for="fe">E-Mail</label><input id="fe" name="email" type="email" inputmode="email" autocomplete="email" placeholder="du@beispiel.de"><span class="f-err">Bitte gültige Adresse angeben.</span></div>
+            </div>
+            <div class="f-field" data-field="kontaktweg">
+              <label>Wie sollen wir uns melden?</label>
+              <div class="chips" id="kontaktweg">
+                <button class="chip" type="button" data-value="anruf">Anruf</button>
+                <button class="chip" type="button" data-value="whatsapp">WhatsApp</button>
+                <button class="chip" type="button" data-value="email">E-Mail</button>
+              </div>
+              <span class="f-err">Bitte auswählen.</span>
+            </div>
+            <div class="f-field" data-field="lebenslauf">
+              <label for="fl">Lebenslauf, optional</label>
+              <label class="f-file" id="fileLabel"><span id="fileText">Datei auswählen</span><b>Durchsuchen</b><input id="fl" type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,application/pdf,image/*"></label>
+              <span class="f-err">Die Datei ist zu groß, bitte höchstens 8 MB.</span>
+            </div>
+            <label class="f-check" id="dsWrap"><input id="fd" type="checkbox"><span>Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzhinweise</a> gelesen und bin einverstanden, dass VIREO meine Angaben zur Bearbeitung meiner Bewerbung verarbeitet.</span></label>
+            <div class="hp"><label>Website<input type="text" id="hp" tabindex="-1" autocomplete="off"></label></div>
+            <div class="f-formerror" id="ferr">Das hat leider nicht geklappt. Bitte versuche es noch einmal oder schreib an <a href="mailto:karriere@vireo-gesundheit.de">karriere@vireo-gesundheit.de</a>.</div>
+            <button class="f-btn" type="submit" id="fsub">Bewerbung absenden</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Danke -->
+    <section class="screen" data-screen="danke" data-tone="sand">
+      <div class="screen__inner" aria-live="polite">
+        <div class="f-band" aria-hidden="true"><span></span><span></span><span></span></div>
+        <h2 class="f-title">Danke, deine<br>Bewerbung ist da</h2>
+        <p class="f-text">Christian Orbanke meldet sich innerhalb von zwei Werktagen bei dir, auf dem Weg, den du dir gewünscht hast.</p>
+        <p class="f-hint">Bei Fragen erreichst du uns unter <a href="mailto:karriere@vireo-gesundheit.de" style="color:var(--text-heading)">karriere@vireo-gesundheit.de</a>.</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="funnel.js" defer></script>
+</body>
+</html>

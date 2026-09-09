@@ -1,0 +1,32 @@
+@font-face{font-family:'Poppins';font-style:normal;font-weight:300;font-display:swap;src:url('assets/fonts/poppins-300.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/poppins-400.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/poppins-500.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/poppins-600.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+
+/* ============================================================
+   VIREO Bewerbungsseite · Tokens 1:1 aus dem VIREO Design System
+   ============================================================ */
+:root{
+  --green-900:#1B241D;--green-800:#26302A;--green-700:#33402F;--green-500:#6E7660;--green-400:#90947C;--green-300:#A9AF95;--green-200:#C3C9B2;--green-100:#DCE0D2;
+  --clay-600:#8C7868;--clay-400:#C4AC90;--clay-300:#D6C6B2;--stone-300:#D8D5CE;--sand-200:#E7E2DC;--paper-100:#F1F0EC;--white:#FFFFFF;
+  --footer-bg:#28342A;
+  --surface-page:var(--paper-100);--surface-sand:var(--sand-200);--surface-card:var(--white);--surface-inverse:var(--green-800);--surface-inverse-deep:var(--green-900);
+  --text-heading:var(--green-800);--text-body:#3A423B;--text-muted:var(--green-500);--text-eyebrow:var(--green-400);--text-on-inverse:var(--paper-100);--text-on-inverse-muted:#B7BFB2;
+  --line-hairline:rgba(38,48,42,0.14);--line-on-inverse:rgba(241,240,236,0.28);
+  --field-bg:var(--white);--field-border:var(--line-hairline);--field-border-focus:var(--green-400);--field-placeholder:#9AA096;
+  --status-error:#8E4B3C;
+  --font-core:'Poppins','Century Gothic','Avenir Next',system-ui,sans-serif;
+  --fs-display-xl:clamp(40px,7vw,76px);--fs-display-l:clamp(32px,5vw,56px);--fs-display-m:clamp(26px,3.6vw,40px);--fs-display-s:clamp(22px,3vw,30px);
+  --fs-title:22px;--fs-body-l:18px;--fs-body:16px;--fs-body-s:14px;--fs-eyebrow:12px;--fs-micro:11px;
+  --lh-display:1.06;--lh-title:1.25;--lh-body:1.65;--lh-tight:1.35;
+  --ls-wordmark:.34em;--ls-eyebrow:.18em;--ls-button:.12em;--ls-display:.005em;
+  --measure-body:46ch;
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;
+  --section-y:clamp(56px,9vw,96px);--container:1200px;--container-narrow:880px;
+  --band-h:14px;--band-h-thin:8px;
+  --radius-pill:999px;--radius-panel:6px;--radius-field:4px;--radius-photo:12px;
+  --shadow-card:0 1px 2px rgba(38,48,42,.04),0 8px 24px rgba(38,48,42,.05);
+  --blob-1:62% 38% 46% 54% / 54% 46% 54% 46%;--blob-2:44% 56% 62% 38% / 46% 58% 42% 54%;--blob-3:55% 45% 38% 62% / 62% 40% 60% 38%;
+  --ease-standard:cubic-bezier(.22,.61,.36,1);--ease-out-soft:cubic-bezier(.16,.84,.44,1);
+  --dur-fast:140ms;--dur-base:220ms;--dur-slow:420ms;--dur-reveal:700ms;
+}
