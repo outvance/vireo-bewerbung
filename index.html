@@ -14,6 +14,7 @@
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="consent.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"JobPosting","title":"Physiotherapeut/in (m/w/d)","description":"Physiotherapeut/in (m/w/d) in Berlin-Mahlsdorf, geringfügig, Teilzeit oder Vollzeit. Durchführung physiotherapeutischer Behandlungen, individuelle Therapieplanung, Beratung und Betreuung der Patient:innen.","datePosted":"2026-09-09","employmentType":["FULL_TIME","PART_TIME"],"hiringOrganization":{"@type":"Organization","name":"VIREO GmbH","sameAs":"https://vireo-gesundheit.de"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"Hultschiner Damm 353-355","addressLocality":"Berlin","postalCode":"12623","addressCountry":"DE"}}}
 </script>
@@ -314,10 +315,16 @@
 
 <div class="sticky-cta" id="stickyCta"><a class="btn btn--full" href="#bewerbung">In 2 Minuten bewerben</a></div>
 
-<div class="consent" id="consent" role="dialog" aria-label="Einwilligung Meta-Pixel">
-  <div class="container">
-    <p>Wir würden gern mit dem Meta-Pixel messen, ob unsere Anzeigen zu Bewerbungen führen. Das passiert nur, wenn du zustimmst. <a href="datenschutz.html">Mehr dazu</a></p>
-    <div class="btns"><button type="button" class="btn btn--sm btn--secondary" style="color:var(--paper-100)" data-consent="no">Nein danke</button><button type="button" class="btn btn--sm btn--inverse" data-consent="yes">Einverstanden</button></div>
+<div class="cmp" id="consent" role="dialog" aria-modal="true" aria-labelledby="cmpTitle" hidden>
+  <div class="cmp__card">
+    <img class="cmp__logo" src="assets/logo-quer.png" alt="VIREO, das Gesundheitszentrum" width="454" height="120">
+    <h2 class="cmp__title" id="cmpTitle">Kurz vorab</h2>
+    <p class="cmp__text">Wir möchten wissen, ob unsere Anzeigen auf Instagram und Facebook die richtigen Menschen erreichen. Dafür nutzen wir das Meta-Pixel, aber nur, wenn du zustimmst. Deine Bewerbung selbst geben wir nicht an Meta weiter.</p>
+    <div class="cmp__btns">
+      <button type="button" class="cmp__btn cmp__btn--yes" data-consent="yes">Zustimmen</button>
+      <button type="button" class="cmp__btn" data-consent="no">Ablehnen</button>
+    </div>
+    <p class="cmp__more"><a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzhinweise</a> · <a href="impressum.html" target="_blank" rel="noopener">Impressum</a></p>
   </div>
 </div>
 

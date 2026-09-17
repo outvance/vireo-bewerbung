@@ -4,7 +4,7 @@
 
   var CONFIG = {
     ENDPOINT: 'https://script.google.com/macros/s/AKfycbyrQPWwRM6cvABHQGAZtKaaZpDd3LQ4YpdoySQ6_iCczE-s4fDKnjVO-NFGwmfEXw34Jw/exec',
-    META_PIXEL_ID: '',           // Pixel-ID des TZO-Werbekontos eintragen, sonst bleibt der Consent-Streifen aus
+    META_PIXEL_ID: '1123806663569116',
     MAX_FILE_BYTES: 8 * 1024 * 1024,
     VARIANTE: 'landingpage',
     TEST_MODE: /[?&]test=1/.test(location.search)
@@ -61,11 +61,10 @@
   }
   function track(ev) { if (window.fbq) { try { window.fbq('track', ev); } catch (e) {} } }
   function showConsent() {
-    consent.classList.add('is-visible');
-    document.body.classList.add('consent-open');
-    document.body.style.setProperty('--consent-h', consent.offsetHeight + 'px');
+    consent.hidden = false;
+    document.body.classList.add('cmp-open');
   }
-  function hideConsent() { consent.classList.remove('is-visible'); document.body.classList.remove('consent-open'); }
+  function hideConsent() { consent.hidden = true; document.body.classList.remove('cmp-open'); }
   if (consent && CONFIG.META_PIXEL_ID) {
     var c = getConsent();
     if (c === 'yes') loadPixel();

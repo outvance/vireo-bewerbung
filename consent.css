@@ -1,0 +1,15 @@
+/* VIREO · Einwilligung Meta-Pixel, mittig über der Seite */
+.cmp{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom));background:rgba(27,36,29,.62);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.cmp[hidden]{display:none}
+.cmp__card{width:100%;max-width:420px;max-height:100%;overflow-y:auto;background:var(--paper-100);color:var(--text-body);border-radius:var(--radius-photo);padding:28px 24px 20px;box-shadow:0 20px 60px rgba(27,36,29,.35);text-align:center;font-family:var(--font-core)}
+.cmp__logo{height:40px;width:auto;margin:0 auto 18px;display:block}
+.cmp__title{margin:0 0 10px;font-size:var(--fs-title);font-weight:500;text-transform:uppercase;letter-spacing:.02em;color:var(--text-heading)}
+.cmp__text{margin:0 0 22px;font-size:var(--fs-body-s);line-height:1.55}
+.cmp__btns{display:flex;flex-direction:column;gap:10px}
+.cmp__btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;padding:14px 24px;border:1.5px solid var(--green-800);border-radius:var(--radius-pill);background:transparent;color:var(--green-800);font-family:inherit;font-size:var(--fs-body-s);font-weight:600;letter-spacing:var(--ls-button);text-transform:uppercase;line-height:1;cursor:pointer}
+.cmp__btn--yes{background:var(--green-800);color:var(--paper-100)}
+.cmp__btn--yes:hover{background:var(--green-900)}
+.cmp__btn:focus-visible{outline:2px solid var(--green-400);outline-offset:2px}
+.cmp__more{margin:16px 0 0;font-size:var(--fs-micro);color:var(--text-muted)}
+.cmp__more a{color:var(--text-muted)}
+body.cmp-open{overflow:hidden}

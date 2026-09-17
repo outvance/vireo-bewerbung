@@ -49,11 +49,11 @@
   if (consent && CONFIG.META_PIXEL_ID) {
     var c = getConsent();
     if (c === 'yes') loadPixel();
-    else if (c !== 'no') consent.hidden = false;
+    else if (c !== 'no') { consent.hidden = false; document.body.classList.add('cmp-open'); }
     $$('[data-consent]', consent).forEach(function (b) {
       b.addEventListener('click', function () {
         var v = b.getAttribute('data-consent');
-        setConsent(v); consent.hidden = true;
+        setConsent(v); consent.hidden = true; document.body.classList.remove('cmp-open');
         if (v === 'yes') loadPixel();
       });
     });

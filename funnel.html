@@ -13,6 +13,7 @@
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="funnel.css">
+<link rel="stylesheet" href="consent.css">
 </head>
 <body>
 
@@ -189,9 +190,17 @@
   </div>
 </div>
 
-<div class="f-consent" id="consent" role="dialog" aria-label="Einwilligung Meta-Pixel" hidden>
-  <p>Wir würden gern mit dem Meta-Pixel messen, ob unsere Anzeigen zu Bewerbungen führen. Das passiert nur, wenn du zustimmst. <a href="datenschutz.html" target="_blank" rel="noopener">Mehr dazu</a></p>
-  <div class="f-consent__btns"><button type="button" class="f-consent__btn" data-consent="no">Nein danke</button><button type="button" class="f-consent__btn f-consent__btn--yes" data-consent="yes">Einverstanden</button></div>
+<div class="cmp" id="consent" role="dialog" aria-modal="true" aria-labelledby="cmpTitle" hidden>
+  <div class="cmp__card">
+    <img class="cmp__logo" src="assets/logo-quer.png" alt="VIREO, das Gesundheitszentrum" width="454" height="120">
+    <h2 class="cmp__title" id="cmpTitle">Kurz vorab</h2>
+    <p class="cmp__text">Wir möchten wissen, ob unsere Anzeigen auf Instagram und Facebook die richtigen Menschen erreichen. Dafür nutzen wir das Meta-Pixel, aber nur, wenn du zustimmst. Deine Bewerbung selbst geben wir nicht an Meta weiter.</p>
+    <div class="cmp__btns">
+      <button type="button" class="cmp__btn cmp__btn--yes" data-consent="yes">Zustimmen</button>
+      <button type="button" class="cmp__btn" data-consent="no">Ablehnen</button>
+    </div>
+    <p class="cmp__more"><a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzhinweise</a> · <a href="impressum.html" target="_blank" rel="noopener">Impressum</a></p>
+  </div>
 </div>
 
 <script src="funnel.js" defer></script>
