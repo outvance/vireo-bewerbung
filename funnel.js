@@ -5,6 +5,7 @@
   var CONFIG = {
     ENDPOINT: 'https://script.google.com/macros/s/AKfycbyrQPWwRM6cvABHQGAZtKaaZpDd3LQ4YpdoySQ6_iCczE-s4fDKnjVO-NFGwmfEXw34Jw/exec',
     VARIANTE: 'funnel',
+    META_PIXEL_ID: '1123806663569116',
     TOTAL_STEPS: 8,
     MAX_FILE_BYTES: 8 * 1024 * 1024,
     TEST_MODE: /[?&]test=1/.test(location.search)
@@ -33,6 +34,31 @@
     else { try { var s = sessionStorage.getItem('vireo_' + k); if (s) origin[k] = s; } catch (e) {} }
   });
 
+  /* Einwilligung + Meta-Pixel: lädt erst nach Zustimmung */
+  var consent = $('#consent');
+  var consentKey = 'vireo_consent_meta';
+  function getConsent() { try { return localStorage.getItem(consentKey); } catch (e) { return null; } }
+  function setConsent(v) { try { localStorage.setItem(consentKey, v); } catch (e) {} }
+  function loadPixel() {
+    if (!CONFIG.META_PIXEL_ID || window.fbq) return;
+    !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', CONFIG.META_PIXEL_ID);
+    window.fbq('track', 'PageView');
+  }
+  function track(ev, data) { if (window.fbq) { try { window.fbq('track', ev, data || {}); } catch (e) {} } }
+  if (consent && CONFIG.META_PIXEL_ID) {
+    var c = getConsent();
+    if (c === 'yes') loadPixel();
+    else if (c !== 'no') consent.hidden = false;
+    $$('[data-consent]', consent).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var v = b.getAttribute('data-consent');
+        setConsent(v); consent.hidden = true;
+        if (v === 'yes') loadPixel();
+      });
+    });
+  }
+
   function screenEl(name) { return stage.querySelector('.screen[data-screen="' + name + '"]'); }
 
   function show(name, dir) {
@@ -57,7 +83,9 @@
     if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
   }
 
+  var started = false;
   function go(name) {
+    if (name === '1' && !started) { started = true; track('ViewContent', { content_name: 'Bewerbung gestartet' }); }
     if (history[history.length - 1] !== name) history.push(name);
     show(name, 'forward');
   }
@@ -179,6 +207,7 @@
       .then(function (r) { return r.json(); })
       .then(function (res) {
         if (!res || !res.ok) throw new Error((res && res.error) || 'unknown');
+        track('Lead', { content_name: 'Bewerbung Physiotherapeut/in' });
         history.push('danke');
         show('danke', 'forward');
       })
