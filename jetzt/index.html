@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Bewerbung als Physiotherapeut/in · VIREO</title>
+<style>html,body{margin:0;height:100%;background:#F1F0EC}</style>
+<script>
+/* Seitentest: teilt Besuche aus den Anzeigen per Zufall auf Funnel und lange Seite auf.
+   Keine Cookies; die Zuteilung gilt nur für die laufende Sitzung (sessionStorage). */
+(function () {
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbyrQPWwRM6cvABHQGAZtKaaZpDd3LQ4YpdoySQ6_iCczE-s4fDKnjVO-NFGwmfEXw34Jw/exec';
+  var ZIELE = { funnel: '/funnel.html', landingpage: '/' };
+  var params = new URLSearchParams(location.search);
+  var seite = null;
+  try { seite = sessionStorage.getItem('vireo_seitentest'); } catch (e) {}
+  var neu = !(seite in ZIELE);
+  if (neu) {
+    seite = Math.random() < 0.5 ? 'funnel' : 'landingpage';
+    try { sessionStorage.setItem('vireo_seitentest', seite); } catch (e) {}
+  }
+  if (!params.get('utm_medium')) params.set('utm_medium', 'seitentest');
+  if (neu) {
+    var body = JSON.stringify({
+      type: 'visit', seite: seite,
+      utm_source: params.get('utm_source') || '', utm_campaign: params.get('utm_campaign') || '',
+      utm_content: params.get('utm_content') || '', test: params.get('test') === '1'
+    });
+    try {
+      if (!(navigator.sendBeacon && navigator.sendBeacon(ENDPOINT, new Blob([body], { type: 'text/plain;charset=utf-8' })))) {
+        fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body });
+      }
+    } catch (e) {}
+  }
+  location.replace(ZIELE[seite] + '?' + params.toString());
+})();
+</script>
+</head>
+<body>
+<noscript><p style="font-family:sans-serif;padding:24px"><a href="/funnel.html">Weiter zur Bewerbung</a></p></noscript>
+</body>
+</html>
