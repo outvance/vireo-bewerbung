@@ -11,6 +11,8 @@
     TEST_MODE: /[?&]test=1/.test(location.search)
   };
 
+  var istBot = navigator.webdriver === true || /bot\b|crawler|spider|facebookexternalhit|facebookcatalog|meta-external|headlesschrome|python-requests|curl\/|wget|slurp|bingpreview|whatsapp\/|embedly/i.test(navigator.userAgent || '');
+
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
@@ -83,9 +85,34 @@
     if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
   }
 
+  var SCHRITTE = {
+    intro: 'Start', '1': 'Umfang', '2': 'Frühester Start', '3': 'Ausbildung', '4': 'Berufserfahrung',
+    '5': 'Zusatzqualifikationen', '6': 'Neue Räume', '7': 'Benefits', '8': 'Kontaktdaten', danke: 'Bewerbung abgeschickt'
+  };
+  var gemeldet = {};
+  function schrittMelden(name) {
+    if (gemeldet[name]) return;
+    gemeldet[name] = true;
+    var label = SCHRITTE[name] || name;
+    var nummer = name === 'intro' ? 0 : (name === 'danke' ? 9 : parseInt(name, 10));
+    track('ViewContent', { content_name: 'Schritt ' + nummer + ': ' + label });
+    if (istBot) return;
+    var body = JSON.stringify({
+      type: 'step', schritt: nummer, name: label,
+      utm_source: origin.utm_source || '', utm_campaign: origin.utm_campaign || '',
+      utm_content: origin.utm_content || '', test: CONFIG.TEST_MODE
+    });
+    try {
+      if (!(navigator.sendBeacon && navigator.sendBeacon(CONFIG.ENDPOINT, new Blob([body], { type: 'text/plain;charset=utf-8' })))) {
+        fetch(CONFIG.ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body });
+      }
+    } catch (e) {}
+  }
+
   var started = false;
   function go(name) {
     if (name === '1' && !started) { started = true; track('ViewContent', { content_name: 'Bewerbung gestartet' }); }
+    schrittMelden(name);
     if (history[history.length - 1] !== name) history.push(name);
     show(name, 'forward');
   }
@@ -208,6 +235,7 @@
       .then(function (res) {
         if (!res || !res.ok) throw new Error((res && res.error) || 'unknown');
         track('Lead', { content_name: 'Bewerbung Physiotherapeut/in' });
+        schrittMelden('danke');
         history.push('danke');
         show('danke', 'forward');
       })
@@ -219,5 +247,6 @@
       });
   });
 
+  schrittMelden('intro');
   show('intro', 'forward');
 })();
