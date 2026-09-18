@@ -21,7 +21,10 @@
     try { sessionStorage.setItem('vireo_seitentest', seite); } catch (e) {}
   }
   if (!params.get('utm_medium')) params.set('utm_medium', 'seitentest');
-  if (neu) {
+  // Besuche von Suchmaschinen und Metas Prüf-Crawlern nicht zählen
+  var ua = navigator.userAgent || '';
+  var istBot = navigator.webdriver === true || /bot|crawl|spider|facebookexternalhit|facebookcatalog|meta-external|preview|headless|python-requests|curl|wget|slurp|bingpreview|whatsapp|embedly/i.test(ua);
+  if (neu && !istBot) {
     var body = JSON.stringify({
       type: 'visit', seite: seite,
       utm_source: params.get('utm_source') || '', utm_campaign: params.get('utm_campaign') || '',
